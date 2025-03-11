@@ -195,8 +195,8 @@ export default function IndustrialBoilerFlowchart() {
   const [currentEdgeColor, setCurrentEdgeColor] = useState("#888888");
   const [isAnimated, setIsAnimated] = useState(true);
   const [edgeType, setEdgeType] = useState("smoothstep");
-  const [snapToGrid, setSnapToGrid] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const [snapToGrid, setSnapToGrid] = useState(true);
+  const [darkMode, setDarkMode] = useState(true);
   const [showMinimap, setShowMinimap] = useState(true);
   const [showComponentPanel, setShowComponentPanel] = useState(false);
   const [showWirePanel, setShowWirePanel] = useState(false);
@@ -874,9 +874,10 @@ export default function IndustrialBoilerFlowchart() {
     <div style={{ width: "100vw", height: "95vh", background: themeStyles.backgroundColor, color: themeStyles.textColor }}>
       {/* Top Navigation Bar */}
       <div className="top-navbar" style={{ background: themeStyles.controlPanelBg, borderBottom: themeStyles.panelBorder }}>
-        <div className="navbar-brand">
-          <h2>Industrial Flowchart Builder</h2>
+        <div className="navbar-brand" style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <h2>Flowchart Marker</h2> <h5>- Ajinkya Mhetre</h5>
         </div>
+
         <div className="navbar-controls">
           <div className="control-group">
             <button
@@ -902,7 +903,7 @@ export default function IndustrialBoilerFlowchart() {
               {showMinimap ? "Hide Minimap" : "Show Minimap"}
             </button>
             <button onClick={toggleSnapToGrid} title="Toggle Snap to Grid">
-              {snapToGrid ? "Snap: ON" : "Snap: OFF"}
+              {snapToGrid ? "Snap: OFF" : "Snap: ON"}
             </button>
           </div>
           <div className="control-group file-controls">
